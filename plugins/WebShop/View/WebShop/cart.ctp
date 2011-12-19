@@ -11,7 +11,7 @@
 	echo '</tr>';
 	
 	//GET all products
-	foreach ($products as $product){
+	foreach ((!isset($products)) ? array() : $products as $product){
 		echo '<tr>';
 		echo '<td>'.$this->Html->image('/WebShop/img/'.$product['Product']['picture'], array('style' => "float: left", "width" => "100px")).'</td>';
 		echo '<td>'.$this->Html->link($product['Product']['name'], array('plugin' => 'web_shop', 'controller' => 'WebShop', 'action' => 'view', $product['Product']['id'])).'</td>';

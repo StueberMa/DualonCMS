@@ -121,7 +121,7 @@ class WebShopController extends AppController {
 		$products = array();
 		
 		//COLLECT data
-		foreach ((isset($productIDs)) ? : $productIDs as $productID) {
+		foreach ((!isset($products)) ? array() : $productIDs as $productID) {
 			$product = $this->Product->findById($productID['id'], array('fields' => 'Product.id, Product.name, Product.price, Product.picture'));
 			$product['count'] = $productID['count'];
 			array_push($products, $product);

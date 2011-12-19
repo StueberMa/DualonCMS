@@ -16,7 +16,7 @@
 	
 	//CREATE serch catalog
 	echo '<ol>';
-	foreach ((isset($products)) ? : $products as $product){
+	foreach ((!isset($products)) ? array() : $products as $product){
 		echo '<li>';
 		echo $this->Html->image('/WebShop/img/'.$product['Product']['picture'], array('style' => "float: left", "width" => "200px"));
 		

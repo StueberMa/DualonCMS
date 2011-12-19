@@ -10,7 +10,7 @@
 	echo $this->element('SearchBar');
 	
 	//CREATE catalog
-	foreach ((isset($data)) ? : $data as $product){
+	foreach ((!isset($data)) ? array() : $data as $product){
 		echo '<div>';
 		
 		echo $this->Js->link(
